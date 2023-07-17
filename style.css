@@ -17,8 +17,8 @@ body {
 
 #snixels {
   position: absolute;
-  top: 300px;
-  left: 350px;
+  top: 350px;
+  left: 250px;
   object-fit: cover; 
 }
 
