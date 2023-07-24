@@ -2,10 +2,22 @@ body {
   background-color: rgb(197, 143, 248);
 }
 
+
+.title-bar-text {
+  font-size: 16px;
+}
+
 #main {
   position: absolute;
-  top: 200px;
-  left: 500px
+  top: 150px;
+  left: 350px;
+  font-size: 20px;
+}
+
+
+#main a {
+  margin-top: 10px;
+  display: block;
 }
 
 #img1 {
@@ -44,10 +56,5 @@ body {
 #guestbook {
   position: absolute;
   top: 600px;
-  left: 900px;
-}
-
-#main a {
-  margin-top: 10px;
-  display: block;
+  left: 765px;
 }
