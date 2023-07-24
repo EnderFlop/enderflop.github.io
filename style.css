@@ -15,8 +15,6 @@ body {
   object-fit: cover; 
 }
 
-
-
 #snixels {
   position: absolute;
   top: 350px;
@@ -35,6 +33,18 @@ body {
   position: absolute;
   top: 100px;
   left: 1000px;
+}
+
+#logo #logo-text {
+  position: absolute;
+  top: 28px;
+  left: 0px;
+}
+
+#guestbook {
+  position: absolute;
+  top: 600px;
+  left: 900px;
 }
 
 #main a {
