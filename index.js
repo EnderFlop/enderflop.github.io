@@ -1,4 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
+  let ZINDEX = 300;
+
   function loadLeagueMatchWidget() {
     const image = document.getElementById("league-image")
     fetch("https://xinhm4ccu5.execute-api.us-east-2.amazonaws.com/league-widget", {method:'GET', headers:{'Content-Type': 'application/json'}})
@@ -13,10 +15,14 @@ window.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  function makeWindowsDraggable() {
+  function setupWindows() {
     const windows = Array.from(document.getElementsByClassName("window"))
     console.log(windows)
-    windows.forEach((windw) => makeDraggable(windw))
+    windows.forEach((windw) => {
+      makeDraggable(windw)
+      makeMinMax(windw)
+      makeGoToTop(windw)
+    })
   }
 
   function makeDraggable(windw) {
@@ -54,14 +60,50 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function makeMinMax(windw) {
+    //SETUP BUTTONS
+    const titleBar = windw.getElementsByClassName("title-bar")[0]
+
+    const titleBarControls = document.createElement("div")
+    titleBarControls.classList.add("title-bar-controls")
+
+    const minButton = document.createElement("button")
+    minButton.ariaLabel = "Minimize"
+    titleBarControls.appendChild(minButton)
+
+    const maxButton = document.createElement("button")
+    maxButton.ariaLabel = "Maximize"
+    titleBarControls.appendChild(maxButton)
+
+    titleBar.appendChild(titleBarControls)
+
+    const windowBody = windw.getElementsByClassName("window-body")[0]
+
+    minButton.onclick = () => {
+      windowBody.style.display = "none"
+    }
+
+    maxButton.onclick = () => {
+      windowBody.style.display = "block"
+    }
+  }
+
+  function makeGoToTop(windw) {
+    windw.onmousedown = moveWindowToTop;
+
+    function moveWindowToTop() {
+      windw.style["z-index"] = ZINDEX;
+      ZINDEX += 1;
+    }
+  }
+
   function main () {
-    makeWindowsDraggable()
+    setupWindows()
     loadLeagueMatchWidget()
   }
 
   main()
 
-  //add minimize/maximize button
   //add closing windows
   //add taskbar where you can reopen windows
 })
