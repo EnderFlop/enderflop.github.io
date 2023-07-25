@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   function loadLeagueMatchWidget() {
     const image = document.getElementById("league-image")
-    fetch("https://uryoxbdq7g.execute-api.us-east-2.amazonaws.com/", {method:'GET', headers:{'Content-Type': 'application/json'}})
+    fetch("https://xinhm4ccu5.execute-api.us-east-2.amazonaws.com/league-widget", {method:'GET', headers:{'Content-Type': 'application/json'}})
     .then(res => res.json())
     .then(data => {
       console.log("win last game: " + data);   
@@ -61,7 +61,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   main()
 
-  //change AWS server to work on local files
   //add minimize/maximize button
   //add closing windows
   //add taskbar where you can reopen windows
