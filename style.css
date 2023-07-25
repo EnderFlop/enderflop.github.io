@@ -2,12 +2,18 @@ body {
   background-color: rgb(197, 143, 248);
 }
 
-#main {
+.window {
   position: absolute;
+}
+
+.title-bar {
+  cursor: move;
+}
+
+#main {
   top: 250px;
   left: 1050px;
 }
-
 
 #main a {
   margin-top: 10px;
@@ -15,45 +21,38 @@ body {
 }
 
 #img1 {
-  position: absolute;
   top: 375px;
   left: 950px;
   object-fit: cover; 
 }
 
 #snixels {
-  position: absolute;
   top: 350px;
   left: 250px;
   object-fit: cover; 
 }
 
 #icgp {
-  position: absolute;
   top: 20px;
   left: 650px;
   object-fit: cover; 
 }
 
 #logo {
-  position: absolute;
   top: 150px;
   left: 40px;
 }
 
 #crown {
-  position: absolute;
   left: 50px;
 }
 
 #guestbook {
-  position: absolute;
   top: 600px;
   left: 765px;
 }
 
 #league {
-  position: absolute;
   top: 60px;
   left: 1200px;
 }
