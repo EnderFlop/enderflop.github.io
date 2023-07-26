@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     fetch("https://xinhm4ccu5.execute-api.us-east-2.amazonaws.com/league-widget", {method:'GET', headers:{'Content-Type': 'application/json'}})
     .then(res => res.json())
     .then(data => {
-      console.log("win last game: " + data);   
+      console.log("league widget loaded")
       image.src = data ? "./media/won.png" : "./media/lost.png"
     })
     .catch(error => {
@@ -17,7 +17,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function setupWindows() {
     const windows = Array.from(document.getElementsByClassName("window"))
-    console.log(windows)
     windows.forEach((windw) => {
       makeDraggable(windw)
       makeMinMax(windw)
@@ -91,7 +90,8 @@ window.addEventListener("DOMContentLoaded", () => {
   function makeGoToTop(windw) {
     windw.onmousedown = moveWindowToTop;
 
-    function moveWindowToTop() {
+    function moveWindowToTop(event) {
+      event.preventDefault();
       windw.style["z-index"] = ZINDEX;
       ZINDEX += 1;
     }
@@ -104,6 +104,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   main()
 
-  //add closing windows
-  //add taskbar where you can reopen windows
+  //nice background?
+    //parallax?
+    //calm pixel art, rain?
+    //just look at dimdevs stuff lol
+  //music player?
+    //ask brawlersworld?
+  //add closing windows, taskbar where you can reopen windows
 })
