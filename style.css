@@ -1,5 +1,7 @@
 body {
-  background: repeating-conic-gradient(rgb(197, 143, 248) 0% 25%, rgb(214, 179, 247) 0% 50%) 50% / 100px 100px;
+
+  background: repeating-conic-gradient(rgb(197, 143, 248) 0% 25%, rgb(214, 179, 247) 0% 50%) 50% / 250px 250px;
+  background-position: bottom 65px left 75px;
 }
 
 .window {
