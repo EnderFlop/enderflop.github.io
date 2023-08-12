@@ -6,8 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     fetch("https://xinhm4ccu5.execute-api.us-east-2.amazonaws.com/league-widget", {method:'GET', headers:{'Content-Type': 'application/json'}})
     .then(res => res.json())
     .then(data => {
-      console.log("league widget loaded")
-      image.src = data ? "./media/won.png" : "./media/lost.png"
+      image.src = data.body ? "./media/won.png" : "./media/lost.png"
     })
     .catch(error => {
       console.log(error)
